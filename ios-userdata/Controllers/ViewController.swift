@@ -1,17 +1,21 @@
-//
-//  ViewController.swift
-//  ios-userdata
-//
-//  Created by derek quinn on 12/4/20.
-//
 
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var name: Name!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        APIHelper.getUserDataBaseResponse(parameter: "", completion: { baseResponse in
+            
+            print("viewDidLoad() name.last==", baseResponse.results[0].name?.last!)
+            
+            
+        })
+        
+        
     }
 
 
